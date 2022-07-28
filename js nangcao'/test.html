@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="eventz" >click e di</button>
+    <input type="text" id="other">
+    <input id="input" type="text" placeholder="nhap di m" >
+    <script>
+        eventz.addEventListener("click",function(e){
+            console.log(e)
+        });
+
+        input.addEventListener("change",function(e)
+        {
+            console.log(this.value);
+        })
+       document.body.onclick=function(){
+        console.log("click on body")
+       }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" id="form" name="tip">
+      <h1>Simple TodoApp</h1>
+      <div>
+        <input type="text" id="ina" />
+        <button class="create"   id="crea">create</button>
+      </div>
+      <div>
+        <label for="loai">All</label>
+        <input type="radio" name="loai" />
+        <label for="loai">Active</label>
+        <input type="radio" name="loai" />
+        <label for="loai">Completed</label>
+        <input type="radio" name="loai" />
+      </div>
+      <div id="show">
+      </div>
+    </form>
+
+    <script>
+      document.forms.tip.addEventListener("submit",function(e){
+
+      e.preventDefault();
+      themmoi = document.getElementById("crea");
+      themmoi.onclick=function() {click()};
+      let dem =0;
+      function click(){
+        dem++;
+        indata = document.getElementById("ina").value;
+        document.getElementById("show").innerHTML += `
+        <div style="display:flex;">
+            <input type="checkbox" />
+            <div class="data"> ${indata}</div>
+            <button id="delete">delete</button>    
+        </div>
+        `;
+        console.log(dem);
+      }
+    })
+    xoa=document.getElementById("delete");
+    xoa.onclick=function() {xoa()};
+    function xoa(){
+        dem--;
+        xoa.parentNode.removeChild(xoa);
+        return false;
+    }
+    </script>
+  </body>
+</html>

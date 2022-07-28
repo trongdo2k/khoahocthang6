@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <form action="" id="form" name="form">
+        <div class="text" id="textz"></div>
+        <table>
+            <tr>
+                <td><button id="n7">7</button></td>
+                <td><button id="n8">8</button></td>
+                <td><button id="n9">9</button></td>
+                <td><button id="sum">+</button></td>
+            </tr>
+            <tr>
+                <td><button id="n4">4</button></td>
+                <td><button id="n5">5</button></td>
+                <td><button id="n6">6</button></td>
+                <td><button id="hieu">-</button></td>
+            </tr>
+            <tr>
+                <td><button id="n1">1</button></td>
+                <td><button id="n2">2</button></td>
+                <td><button id="n3">3</button></td>
+                <td><button id="tich">*</button></td>
+            </tr>
+            <tr>
+                <td><button id="thuong">/</button></td>
+                <td><button id="n0">0</button></td>
+                <td><button id="delete">delete</button></td>
+                <td><button id="ansq">=</button></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        
+        document.forms.form.addEventListener("submit",function(e){
+        e.preventDefault();
+
+        for(let i=0;i<10;i++)
+        {
+        document.getElementById(`n${i}`).onclick=function(){
+        const data= document.getElementById("textz").innerHTML;
+        document.getElementById("textz").innerHTML=data+i;
+        };
+        }
+
+        document.getElementById("sum").onclick=function(){
+            const data= document.getElementById("textz").innerHTML;
+            
+            document.getElementById("textz").innerHTML=``;
+            
+            document.getElementById("ansq").onclick=function(){
+            
+                data2=document.getElementById("textz").innerHTML;
+                tong=parseInt(data)+parseInt(data2);
+                
+                document.getElementById("textz").innerHTML=tong;
+            }
+        }
+
+        document.getElementById("hieu").onclick=function(){
+            const data= document.getElementById("textz").innerHTML;
+            
+            document.getElementById("textz").innerHTML=``;
+            
+            document.getElementById("ansq").onclick=function(){
+            
+                data2=document.getElementById("textz").innerHTML;
+                hieu=parseInt(data)-parseInt(data2);
+                
+                document.getElementById("textz").innerHTML=hieu;
+            }
+        }
+
+        document.getElementById("tich").onclick=function(){
+            const data= document.getElementById("textz").innerHTML;
+            
+            document.getElementById("textz").innerHTML=``;
+            
+            document.getElementById("ansq").onclick=function(){
+            
+                data2=document.getElementById("textz").innerHTML;
+                hieu=parseInt(data)*parseInt(data2);
+                
+                document.getElementById("textz").innerHTML=hieu;
+            }
+        }
+
+        document.getElementById("thuong").onclick=function(){
+            const data= document.getElementById("textz").innerHTML;
+            
+            document.getElementById("textz").innerHTML=``;
+            
+            document.getElementById("ansq").onclick=function(){
+            
+                data2=document.getElementById("textz").innerHTML;
+                hieu=parseInt(data)/parseInt(data2);
+                
+                document.getElementById("textz").innerHTML=hieu;
+            }
+        }
+
+        
+        document.getElementById("delete").onclick=function(){
+            const data= document.getElementById("textz").innerHTML;
+            if(data>0&&data<10){
+                document.getElementById("textz").innerHTML="";
+            }else
+            document.getElementById("textz").innerHTML=Math.floor(data/10);
+        }
+            
+        
+
+        
+
+
+    })
+    
+    
+    </script>
+</body>
+</html>

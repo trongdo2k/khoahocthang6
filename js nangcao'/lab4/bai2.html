@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tipcaculator</h1>
+    <form action="" id="tip" name="tip">
+        <div>
+            <label for="bill">Bill amount</label>
+            <input type="text" name="bill" id="bill">
+        </div>
+        <div>
+            <label for="number">Number of guests</label>
+            <input type="text" name="number" id="number">
+        </div>
+        <div>service quanlity</div>
+        <select name="choose" id="choose">
+            <option value="0.30">30%</option>
+            <option value="0.20">20%</option>
+            <option value="0.15">15%</option>
+            <option value="0.10">10%</option>
+            <option value="0.05">5%</option>  
+        </select>
+        <div class="bt" id="bt">
+            <div class="hienthi" id="hienthi"></div>
+            <button class="bt" id="bt" >calcukate</button>
+        </div>
+    </form>
+    <script>
+        document.forms.tip.addEventListener("submit",function(e){
+            e.preventDefault();
+            const bill=document.getElementById("bill").value;
+            const sl=document.getElementById("number").value;
+            const hh=document.getElementById("choose").value;
+            document.querySelector(".bt").onclick=document.getElementById("hienthi").innerHTML="tip "+bill*hh/sl+" each person";
+        })
+
+        
+    </script>
+</body>
+</html>

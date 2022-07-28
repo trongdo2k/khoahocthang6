@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+ <meta charset="UTF-8" />
+ <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+ <meta name="viewport" content="width=device-width, initialscale=1.0"/>
+ <title>Random background color</title>
+ </head>
+ <body>
+ <div id="app">
+ <div class="property"></div>
+ <div class="action">
+ <div class="">
+ Click button below to change the background color
+ </div>
+ <button id="btn" class="btn">Change</button>
+ </div>
+ </div>
+ <script>
+    function Randomh(){
+        const dir=["to top","to right","to left","to bottom"]
+        return dir[Math.floor(Math.random()*dir.length)];
+    }
+    function Randomcl(){
+        let randomColor = () => {
+            let hexCode = "#";
+            for (i = 0; i < 6; i++) {
+                hexCode += hexString[Math.floor(Math.random() * hexString.length)];
+            }
+            return hexCode;
+        }
+        
+    }
+    btn.addEventListener("click",function(){
+        const dir=Randomh();
+        const color1=Randomcl();
+        const color2=Randomcl();
+        const value=`linear-gradient(${dir},${color1},${color2})`;
+        document.body.style.backgroundImage=value;
+        
+    })
+ </script>
+ <style>
+    body{
+        width: 1320px;
+        height: 1000px;
+    }
+ </style>
+ </body>
+</html>

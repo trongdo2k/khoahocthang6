@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        
+    </style>
+    <form id="tip" name="tip">
+        <h2>body Mass Index</h2>
+        <table>
+            <tr>
+                <td>
+                    <input type="text" id="weightz">
+                </td>
+                <td>
+                    <input type="text" id="heightz">
+                </td>
+            </tr>
+        </table>
+        
+        <div id="check">
+            <div>your BMI:</div>
+            <div>you fucking fat</div>
+        </div>
+        <button class="bt" name="bt" id="bt">caculate</button>
+    </form>
+    <script>
+        document.forms.tip.addEventListener("submit",function(e){
+
+        e.preventDefault();
+        
+        const bt=document.getElementById("bt");
+        
+        
+        bt.onclick=function(){
+            const weight=document.getElementById("weightz").value;
+            const height=document.getElementById("heightz").value;  
+            let bmi=weight/(height*height);
+            
+            document.getElementById("check").innerHTML=`
+            <div>your BMI:${bmi}</div>
+            `
+            if(bmi<=16){
+                alert("ban gay cap do 3");
+                
+            }
+            else if(bmi<17)
+            {
+                alert("ban gay do 2");
+                
+            }
+            else if(bmi<18.5){
+                alert("ban gay do 1");
+            }
+            else if(bmi<25){
+                alert("binh thuong")
+            }
+            else if(bmi<30)
+            {
+                alert("thua can");
+            }
+            else if(bmi<35)
+            {
+                alert("beo phi do 1");
+                
+            }
+            else if(bmi<40)
+            {
+                alert("beo phi do 2");
+            }
+            else alert("bao phi do 3");
+        }
+    });
+    </script>
+</body>
+</html>
